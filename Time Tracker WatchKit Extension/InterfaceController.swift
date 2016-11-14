@@ -17,11 +17,14 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var middleLbl: WKInterfaceLabel!
     @IBOutlet var clockBtn: WKInterfaceButton!
     
+    // when apps starts its set to false
+    var clockedIn = false
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
-        
+        updateUI(clockedIn: clockedIn)
+
     }
     
     override func willActivate() {
@@ -34,8 +37,32 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    @IBAction func clockBtnAction() {
-        clockBtn.setTitle("Clock-Out")
+    func updateUI(clockedIn:Bool){
+        if clockedIn {
+            //Shows the UI when person's clocked in
+            topLbl.setHidden(false)
+            middleLbl.setText("5m 22s")
+            clockBtn.setTitle("Clock-Out")
+            clockBtn.setBackgroundColor(UIColor.red)
+            
+        } else {
+            // Shows the UI when person's clocked out
+            topLbl.setHidden(true)
+            middleLbl.setText("Today\n3h 44m")
+            clockBtn.setTitle("Clock-In")
+            clockBtn.setBackgroundColor(UIColor.green)
+        }
     }
+    
+    @IBAction func clockBtnAction() {
+        if clockedIn {
+            clockedIn = false
+        } else {
+            clockedIn = true
+        }
+        updateUI(clockedIn: clockedIn)
+    }
+    
+    
 
 }
