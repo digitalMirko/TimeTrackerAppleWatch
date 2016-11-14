@@ -14,16 +14,26 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Time_Tracker_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="0.90000000000000002" alignment="center" verticalAlignment="bottom" title="Button" id="cMV-fN-4eP"/>
+                        <button width="0.90000000000000002" alignment="center" verticalAlignment="bottom" title="Clock-In" id="cMV-fN-4eP">
+                            <connections>
+                                <action selector="clockBtnAction" destination="AgC-eL-Hgc" id="rL6-2T-mEz"/>
+                            </connections>
+                        </button>
                         <separator alignment="center" verticalAlignment="bottom" id="IYk-pU-iUy">
                             <color key="color" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </separator>
+                        <label alignment="left" text="Today: 3h 4m" id="LbI-zV-M4X"/>
                         <label alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" id="VV1-87-waU">
                             <string key="text">Today
-13h 4m</string>
-                            <fontDescription key="font" type="boldSystem" pointSize="40"/>
+13h 44m</string>
+                            <fontDescription key="font" type="boldSystem" pointSize="34"/>
                         </label>
                     </items>
+                    <connections>
+                        <outlet property="clockBtn" destination="cMV-fN-4eP" id="hD2-gF-wa7"/>
+                        <outlet property="middleLbl" destination="VV1-87-waU" id="5qd-OU-5Lc"/>
+                        <outlet property="topLbl" destination="LbI-zV-M4X" id="V6Y-4y-wPi"/>
+                    </connections>
                 </controller>
             </objects>
         </scene>
