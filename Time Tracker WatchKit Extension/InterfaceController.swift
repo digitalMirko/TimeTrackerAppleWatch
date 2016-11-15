@@ -76,9 +76,37 @@ class InterfaceController: WKInterfaceController {
         clockedIn = false
         
         if let clockedInDate = UserDefaults.standard.value(forKey: "clockedIn") as? Date {
-            print(clockedInDate)
-        }
+//            print(clockedInDate)
+            // Adding the clockIn time to the clockIns array
+            if var clockIns = UserDefaults.standard.array(forKey: "clockIns") as? [Date] {
+                clockIns.insert(clockedInDate, at: 0)
+                // save back into User Defaults
+                UserDefaults.standard.set(clockIns, forKey: "clockIns")
+                
+                // check if working
+                print(clockIns)
+            } else {
+                UserDefaults.standard.set([clockedInDate], forKey: "clockIns")
+            }
+            // Adding the clockOut time to the clockOuts array
+            if var clockOuts = UserDefaults.standard.array(forKey: "clockOuts") as? [Date] {
+                clockOuts.insert(Date(), at: 0)
+                // save back into User Defaults
+                UserDefaults.standard.set(clockOuts, forKey: "clockOuts")
+                
+                // check if working
+                print(clockOuts)
+            } else {
+                UserDefaults.standard.set([Date()], forKey: "clockOuts")
+            }
 
+            // clockedIn time set to nil, if someone looses power, powers up and still clockOut if ClockedIn
+            UserDefaults.standard.set(nil, forKey: "clockedIn")
+            
+            
+        }
+        // synchronize 
+        UserDefaults.standard.synchronize()
     }
 
 }
