@@ -11,7 +11,7 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
+    
     
     @IBOutlet var topLbl: WKInterfaceLabel!
     @IBOutlet var middleLbl: WKInterfaceLabel!
@@ -24,7 +24,7 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         
         updateUI(clockedIn: clockedIn)
-
+        
     }
     
     override func willActivate() {
@@ -56,10 +56,10 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func clockBtnAction() {
         if clockedIn {
-//            clockedIn = false
+            //            clockedIn = false
             clockOut()
         } else {
-//            clockedIn = true
+            //            clockedIn = true
             clockIn()
         }
         updateUI(clockedIn: clockedIn)
@@ -70,13 +70,26 @@ class InterfaceController: WKInterfaceController {
         
         UserDefaults.standard.set(Date(), forKey: "clockedIn")
         UserDefaults.standard.synchronize()
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
+            (timer) in
+            if let clockedInDate = UserDefaults.standard.value(forKey: "clockedIn") as? Date {
+                let timeInterval = Int(Date().timeIntervalSince(clockedInDate))  // + 40000 seconds for testing
+//                print(timeInterval)  // testing output
+                
+                let hours = timeInterval / 3600
+                let minutes = (timeInterval % 3600) / 60
+                let seconds = timeInterval % 60
+                self.middleLbl.setText("\(hours)h \(minutes)m \(seconds)s")
+            }
+        }
     }
     
     func clockOut(){
         clockedIn = false
         
         if let clockedInDate = UserDefaults.standard.value(forKey: "clockedIn") as? Date {
-//            print(clockedInDate)
+            //            print(clockedInDate)
             // Adding the clockIn time to the clockIns array
             if var clockIns = UserDefaults.standard.array(forKey: "clockIns") as? [Date] {
                 clockIns.insert(clockedInDate, at: 0)
@@ -99,14 +112,14 @@ class InterfaceController: WKInterfaceController {
             } else {
                 UserDefaults.standard.set([Date()], forKey: "clockOuts")
             }
-
+            
             // clockedIn time set to nil, if someone looses power, powers up and still clockOut if ClockedIn
             UserDefaults.standard.set(nil, forKey: "clockedIn")
             
             
         }
-        // synchronize 
+        // synchronize
         UserDefaults.standard.synchronize()
     }
-
+    
 }
