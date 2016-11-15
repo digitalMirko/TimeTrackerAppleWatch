@@ -56,13 +56,29 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func clockBtnAction() {
         if clockedIn {
-            clockedIn = false
+//            clockedIn = false
+            clockOut()
         } else {
-            clockedIn = true
+//            clockedIn = true
+            clockIn()
         }
         updateUI(clockedIn: clockedIn)
     }
     
+    func clockIn(){
+        clockedIn = true
+        
+        UserDefaults.standard.set(Date(), forKey: "clockedIn")
+        UserDefaults.standard.synchronize()
+    }
     
+    func clockOut(){
+        clockedIn = false
+        
+        if let clockedInDate = UserDefaults.standard.value(forKey: "clockedIn") as? Date {
+            print(clockedInDate)
+        }
+
+    }
 
 }
