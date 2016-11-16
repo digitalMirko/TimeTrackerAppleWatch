@@ -25,6 +25,8 @@ class InterfaceController: WKInterfaceController {
         
         updateUI(clockedIn: clockedIn)
         
+//        totalClockedTime()
+        
     }
     
     override func willActivate() {
@@ -81,6 +83,14 @@ class InterfaceController: WKInterfaceController {
                 let minutes = (timeInterval % 3600) / 60
                 let seconds = timeInterval % 60
                 self.middleLbl.setText("\(hours)h \(minutes)m \(seconds)s")
+                
+                let totalTimeInterval = timeInterval + self.totalClockedTime()
+                
+                // updating top label
+                let totalHours = totalTimeInterval / 3600
+                let totalMinutes = (totalTimeInterval % 3600) / 60
+                let totalSeconds = totalTimeInterval % 60
+                self.topLbl.setText("Today:\(totalHours)h \(totalMinutes)m \(totalSeconds)s")
             }
         }
     }
@@ -120,6 +130,34 @@ class InterfaceController: WKInterfaceController {
         }
         // synchronize
         UserDefaults.standard.synchronize()
+        
+        // calls total clocked time
+//        totalClockedTime()
     }
     
+    func totalClockedTime() -> Int {
+         if var clockIns = UserDefaults.standard.array(forKey: "clockIns") as? [Date] {
+            if var clockOuts = UserDefaults.standard.array(forKey: "clockOuts") as? [Date] {
+                
+                var seconds = 0
+                for index in 0..<clockIns.count {
+
+//                    print("ClockIn:\(clockIns[index])")      // testing
+//                    print("ClockOut:\(clockOuts[index])")    // testing
+
+                    // Find the seconds between clockin and out
+                    let currentSeconds = Int(clockOuts[index].timeIntervalSince(clockIns[index]))
+                    
+              
+                    // Add time to seconds
+                    seconds += currentSeconds
+                }
+                
+//                print("Total Seconds: \(seconds)")
+                return seconds
+            }
+        }
+        return 0
+    }
+
 }
