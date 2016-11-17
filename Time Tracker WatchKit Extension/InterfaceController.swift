@@ -197,4 +197,9 @@ class InterfaceController: WKInterfaceController {
         
     }
     
+    @IBAction func resetAllTapped() {
+        print("Reset All Btn Tapped")
+    }
+    
+    
 }

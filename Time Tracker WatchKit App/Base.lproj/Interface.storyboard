@@ -29,6 +29,16 @@
                             <fontDescription key="font" type="boldSystem" pointSize="34"/>
                         </label>
                     </items>
+                    <menu key="menu" id="1s1-qQ-FFe">
+                        <items>
+                            <menuItem title="History" icon="info" id="egs-9N-0dl"/>
+                            <menuItem title="Reset All" icon="trash" id="8NZ-Vx-Iql">
+                                <connections>
+                                    <action selector="resetAllTapped" destination="AgC-eL-Hgc" id="ty5-Ol-n2B"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="clockBtn" destination="cMV-fN-4eP" id="hD2-gF-wa7"/>
                         <outlet property="middleLbl" destination="VV1-87-waU" id="5qd-OU-5Lc"/>
