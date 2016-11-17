@@ -11,24 +11,26 @@ import Foundation
 
 
 class TimeTableInterfaceController: WKInterfaceController {
-
+    
+    @IBOutlet var table: WKInterfaceTable!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+        
+        table.setNumberOfRows(10, withRowType: "clockInOutRow")
+        
+        // runs through 10 times and says Testing123 in table
+        for index in 0..<10 {
+            if let rowController = table.rowController(at: index) as? ClockInOutRowController {
+                
+                rowController.label.setText("Testing123")
+            }
+            
+        }
+        
+        
     }
     
-    @IBOutlet var table: WKInterfaceTable!
-    
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
-
 }

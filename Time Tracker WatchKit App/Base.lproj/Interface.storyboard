@@ -58,8 +58,15 @@
                     <items>
                         <table alignment="left" id="yp3-hv-cE8">
                             <items>
-                                <tableRow id="FnH-69-Lws">
-                                    <group key="rootItem" width="1" alignment="left" id="Itc-gk-JYd"/>
+                                <tableRow identifier="clockInOutRow" id="FnH-69-Lws" customClass="ClockInOutRowController" customModule="Time_Tracker_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Itc-gk-JYd">
+                                        <items>
+                                            <label alignment="left" text="Label" id="Fut-bh-2KW"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="Fut-bh-2KW" id="ZRO-fd-Q8F"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
