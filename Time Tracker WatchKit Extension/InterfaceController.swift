@@ -211,5 +211,9 @@ class InterfaceController: WKInterfaceController {
         updateUI(clockedIn: false)
     }
     
+    @IBAction func historyTapped() {
+        pushController(withName: "TimeTableController", context: nil)
+        
+    }
     
 }

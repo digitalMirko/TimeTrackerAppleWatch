@@ -15,6 +15,7 @@
 		AC92AD931DDD6D1E0053725A /* 03 Timer Stopped.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD8E1DDD6D1E0053725A /* 03 Timer Stopped.png */; };
 		AC92AD941DDD6D1E0053725A /* 04 Timer Hard Press - Reset All Btn clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD8F1DDD6D1E0053725A /* 04 Timer Hard Press - Reset All Btn clicked.png */; };
 		AC92AD951DDD6D1E0053725A /* 05 Time History Cleared.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD901DDD6D1E0053725A /* 05 Time History Cleared.png */; };
+		AC92AD971DDD756C0053725A /* TimeTableInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92AD961DDD756C0053725A /* TimeTableInterfaceController.swift */; };
 		ACA902841DD963EE004B948C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA902831DD963EE004B948C /* AppDelegate.swift */; };
 		ACA902861DD963EE004B948C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA902851DD963EE004B948C /* ViewController.swift */; };
 		ACA902891DD963EE004B948C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA902871DD963EE004B948C /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		AC92AD8E1DDD6D1E0053725A /* 03 Timer Stopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03 Timer Stopped.png"; sourceTree = "<group>"; };
 		AC92AD8F1DDD6D1E0053725A /* 04 Timer Hard Press - Reset All Btn clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04 Timer Hard Press - Reset All Btn clicked.png"; sourceTree = "<group>"; };
 		AC92AD901DDD6D1E0053725A /* 05 Time History Cleared.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "05 Time History Cleared.png"; sourceTree = "<group>"; };
+		AC92AD961DDD756C0053725A /* TimeTableInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableInterfaceController.swift; sourceTree = "<group>"; };
 		ACA902801DD963EE004B948C /* Time Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA902831DD963EE004B948C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACA902851DD963EE004B948C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA902A61DD963EF004B948C /* InterfaceController.swift */,
+				AC92AD961DDD756C0053725A /* TimeTableInterfaceController.swift */,
 				ACA902A81DD963EF004B948C /* ExtensionDelegate.swift */,
 				ACA902AA1DD963EF004B948C /* Assets.xcassets */,
 				AC92AD8A1DDD66EF0053725A /* ScreenCaps 01 */,
@@ -350,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACA902A91DD963EF004B948C /* ExtensionDelegate.swift in Sources */,
+				AC92AD971DDD756C0053725A /* TimeTableInterfaceController.swift in Sources */,
 				ACA902A71DD963EF004B948C /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

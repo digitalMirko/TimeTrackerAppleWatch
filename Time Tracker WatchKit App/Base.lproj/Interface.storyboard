@@ -31,7 +31,11 @@
                     </items>
                     <menu key="menu" id="1s1-qQ-FFe">
                         <items>
-                            <menuItem title="History" icon="info" id="egs-9N-0dl"/>
+                            <menuItem title="History" icon="info" id="egs-9N-0dl">
+                                <connections>
+                                    <action selector="historyTapped" destination="AgC-eL-Hgc" id="oTM-xC-HTJ"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Reset All" icon="trash" id="8NZ-Vx-Iql">
                                 <connections>
                                     <action selector="resetAllTapped" destination="AgC-eL-Hgc" id="ty5-Ol-n2B"/>
@@ -46,6 +50,26 @@
                     </connections>
                 </controller>
             </objects>
+        </scene>
+        <!--TimeTableController-->
+        <scene sceneID="uha-NW-1P0">
+            <objects>
+                <controller identifier="TimeTableController" id="h4g-b1-I42" customClass="TimeTableInterfaceController" customModule="Time_Tracker_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="yp3-hv-cE8">
+                            <items>
+                                <tableRow id="FnH-69-Lws">
+                                    <group key="rootItem" width="1" alignment="left" id="Itc-gk-JYd"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="yp3-hv-cE8" id="AMy-sv-gNS"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="333" y="98"/>
         </scene>
     </scenes>
 </document>
