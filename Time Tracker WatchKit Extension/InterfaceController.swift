@@ -161,8 +161,8 @@ class InterfaceController: WKInterfaceController {
                 var seconds = 0
                 for index in 0..<clockIns.count {
                     
-                    //                    print("ClockIn:\(clockIns[index])")      // testing
-                    //                    print("ClockOut:\(clockOuts[index])")    // testing
+                    // print("ClockIn:\(clockIns[index])")      // testing
+                    // print("ClockOut:\(clockOuts[index])")    // testing
                     
                     // Find the seconds between clockin and out
                     let currentSeconds = Int(clockOuts[index].timeIntervalSince(clockIns[index]))
