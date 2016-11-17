@@ -10,6 +10,11 @@
 		AC92AD871DDD66D50053725A /* 03 Timer Running.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD841DDD66D50053725A /* 03 Timer Running.png */; };
 		AC92AD881DDD66D50053725A /* 02 Pressed Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD851DDD66D50053725A /* 02 Pressed Screen.png */; };
 		AC92AD891DDD66D50053725A /* 01 Initial Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD861DDD66D50053725A /* 01 Initial Screen.png */; };
+		AC92AD911DDD6D1E0053725A /* 01 Initial Screen Cap.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD8C1DDD6D1E0053725A /* 01 Initial Screen Cap.png */; };
+		AC92AD921DDD6D1E0053725A /* 02 Timer Running w History.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD8D1DDD6D1E0053725A /* 02 Timer Running w History.png */; };
+		AC92AD931DDD6D1E0053725A /* 03 Timer Stopped.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD8E1DDD6D1E0053725A /* 03 Timer Stopped.png */; };
+		AC92AD941DDD6D1E0053725A /* 04 Timer Hard Press - Reset All Btn clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD8F1DDD6D1E0053725A /* 04 Timer Hard Press - Reset All Btn clicked.png */; };
+		AC92AD951DDD6D1E0053725A /* 05 Time History Cleared.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92AD901DDD6D1E0053725A /* 05 Time History Cleared.png */; };
 		ACA902841DD963EE004B948C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA902831DD963EE004B948C /* AppDelegate.swift */; };
 		ACA902861DD963EE004B948C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA902851DD963EE004B948C /* ViewController.swift */; };
 		ACA902891DD963EE004B948C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA902871DD963EE004B948C /* Main.storyboard */; };
@@ -70,6 +75,11 @@
 		AC92AD841DDD66D50053725A /* 03 Timer Running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03 Timer Running.png"; sourceTree = "<group>"; };
 		AC92AD851DDD66D50053725A /* 02 Pressed Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02 Pressed Screen.png"; sourceTree = "<group>"; };
 		AC92AD861DDD66D50053725A /* 01 Initial Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01 Initial Screen.png"; sourceTree = "<group>"; };
+		AC92AD8C1DDD6D1E0053725A /* 01 Initial Screen Cap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01 Initial Screen Cap.png"; sourceTree = "<group>"; };
+		AC92AD8D1DDD6D1E0053725A /* 02 Timer Running w History.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02 Timer Running w History.png"; sourceTree = "<group>"; };
+		AC92AD8E1DDD6D1E0053725A /* 03 Timer Stopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03 Timer Stopped.png"; sourceTree = "<group>"; };
+		AC92AD8F1DDD6D1E0053725A /* 04 Timer Hard Press - Reset All Btn clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04 Timer Hard Press - Reset All Btn clicked.png"; sourceTree = "<group>"; };
+		AC92AD901DDD6D1E0053725A /* 05 Time History Cleared.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "05 Time History Cleared.png"; sourceTree = "<group>"; };
 		ACA902801DD963EE004B948C /* Time Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA902831DD963EE004B948C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACA902851DD963EE004B948C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +124,18 @@
 				AC92AD841DDD66D50053725A /* 03 Timer Running.png */,
 			);
 			name = "ScreenCaps 01";
+			sourceTree = "<group>";
+		};
+		AC92AD8B1DDD6D1E0053725A /* Screen Caps 02 */ = {
+			isa = PBXGroup;
+			children = (
+				AC92AD8C1DDD6D1E0053725A /* 01 Initial Screen Cap.png */,
+				AC92AD8D1DDD6D1E0053725A /* 02 Timer Running w History.png */,
+				AC92AD8E1DDD6D1E0053725A /* 03 Timer Stopped.png */,
+				AC92AD8F1DDD6D1E0053725A /* 04 Timer Hard Press - Reset All Btn clicked.png */,
+				AC92AD901DDD6D1E0053725A /* 05 Time History Cleared.png */,
+			);
+			path = "Screen Caps 02";
 			sourceTree = "<group>";
 		};
 		ACA902771DD963EE004B948C = {
@@ -166,6 +188,7 @@
 				ACA902A81DD963EF004B948C /* ExtensionDelegate.swift */,
 				ACA902AA1DD963EF004B948C /* Assets.xcassets */,
 				AC92AD8A1DDD66EF0053725A /* ScreenCaps 01 */,
+				AC92AD8B1DDD6D1E0053725A /* Screen Caps 02 */,
 				ACA902AC1DD963EF004B948C /* Info.plist */,
 			);
 			path = "Time Tracker WatchKit Extension";
@@ -298,10 +321,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC92AD921DDD6D1E0053725A /* 02 Timer Running w History.png in Resources */,
 				AC92AD881DDD66D50053725A /* 02 Pressed Screen.png in Resources */,
+				AC92AD911DDD6D1E0053725A /* 01 Initial Screen Cap.png in Resources */,
 				AC92AD871DDD66D50053725A /* 03 Timer Running.png in Resources */,
+				AC92AD951DDD6D1E0053725A /* 05 Time History Cleared.png in Resources */,
+				AC92AD931DDD6D1E0053725A /* 03 Timer Stopped.png in Resources */,
 				ACA902AB1DD963EF004B948C /* Assets.xcassets in Resources */,
 				AC92AD891DDD66D50053725A /* 01 Initial Screen.png in Resources */,
+				AC92AD941DDD6D1E0053725A /* 04 Timer Hard Press - Reset All Btn clicked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,7 +44,7 @@ class InterfaceController: WKInterfaceController {
             //Shows the UI when person's clocked in
             topLbl.setHidden(false)
             self.topLbl.setText("Today: \(self.totalTimeWorkedAsString())")
-//            middleLbl.setText("0h 0m 0s")
+            //            middleLbl.setText("0h 0m 0s")
             middleLbl.setText("0s")
             clockBtn.setTitle("Clock-Out")
             clockBtn.setBackgroundColor(UIColor.red)
@@ -98,16 +98,16 @@ class InterfaceController: WKInterfaceController {
                 
                 currentClockedInString += "\(seconds)s"
                 
-//                self.middleLbl.setText("\(hours)h \(minutes)m \(seconds)s")
+                //                self.middleLbl.setText("\(hours)h \(minutes)m \(seconds)s")
                 self.middleLbl.setText(currentClockedInString)
                 
-//                let totalTimeInterval = timeInterval + self.totalClockedTime()
+                //                let totalTimeInterval = timeInterval + self.totalClockedTime()
                 
                 // updating top label
-//                let totalHours = totalTimeInterval / 3600
-//                let totalMinutes = (totalTimeInterval % 3600) / 60
-//                let totalSeconds = totalTimeInterval % 60
-//                self.topLbl.setText("Today:\(totalHours)h \(totalMinutes)m \(totalSeconds)s")
+                //                let totalHours = totalTimeInterval / 3600
+                //                let totalMinutes = (totalTimeInterval % 3600) / 60
+                //                let totalSeconds = totalTimeInterval % 60
+                //                self.topLbl.setText("Today:\(totalHours)h \(totalMinutes)m \(totalSeconds)s")
                 
                 self.topLbl.setText("Today: \(self.totalTimeWorkedAsString())")
             }
@@ -198,7 +198,17 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func resetAllTapped() {
-        print("Reset All Btn Tapped")
+        //        print("Reset All Btn Tapped")  // Btn test
+        
+        // Erases all of our data clockedIn, clockIns, clockOuts
+        UserDefaults.standard.set(nil, forKey: "clockedIn")
+        UserDefaults.standard.set(nil, forKey: "clockIns")
+        UserDefaults.standard.set(nil, forKey: "clockOuts")
+        
+        // synchronize
+        UserDefaults.standard.synchronize()
+        
+        updateUI(clockedIn: false)
     }
     
     
