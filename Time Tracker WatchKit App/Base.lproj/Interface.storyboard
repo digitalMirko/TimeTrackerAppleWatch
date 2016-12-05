@@ -51,6 +51,13 @@
                 </controller>
             </objects>
         </scene>
+        <!--TimeDetail-->
+        <scene sceneID="dha-Ww-V4d">
+            <objects>
+                <controller identifier="TimeDetail" id="B9s-Q8-lqi"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="-225"/>
+        </scene>
         <!--TimeTableController-->
         <scene sceneID="uha-NW-1P0">
             <objects>
@@ -78,7 +85,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="333" y="98"/>
+            <point key="canvasLocation" x="380" y="67"/>
         </scene>
     </scenes>
 </document>

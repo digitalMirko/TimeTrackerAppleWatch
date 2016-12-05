@@ -61,4 +61,8 @@ class TimeTableInterfaceController: WKInterfaceController {
         
     }
     
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        pushController(withName: "TimeDetail", context: [clockIns[rowIndex],clockOuts[rowIndex]])
+    }
+    
 }
