@@ -20,18 +20,38 @@ class InterfaceController: WKInterfaceController {
     // when apps starts its set to false
     var clockedIn = false
     
+    var timer : Timer? = nil
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        updateUI(clockedIn: clockedIn)
+//        updateUI(clockedIn: clockedIn)
         
         //        totalClockedTime()
+        
+        
         
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+       if UserDefaults.standard.value(forKey: "clockedIn") != nil {
+        
+        if timer == nil {
+            startUpTimer()
+        }
+        
+            clockedIn = true
+            updateUI(clockedIn: true)
+        } else {
+            clockedIn = false 
+            updateUI(clockedIn: false)
+        }
+        
+        
     }
     
     override func didDeactivate() {
@@ -70,13 +90,9 @@ class InterfaceController: WKInterfaceController {
         updateUI(clockedIn: clockedIn)
     }
     
-    func clockIn(){
-        clockedIn = true
+    func startUpTimer(){
         
-        UserDefaults.standard.set(Date(), forKey: "clockedIn")
-        UserDefaults.standard.synchronize()
-        
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
             (timer) in
             if let clockedInDate = UserDefaults.standard.value(forKey: "clockedIn") as? Date {
                 let timeInterval = Int(Date().timeIntervalSince(clockedInDate))  // + 40000 seconds for testing
@@ -112,10 +128,25 @@ class InterfaceController: WKInterfaceController {
                 self.topLbl.setText("Today: \(self.totalTimeWorkedAsString())")
             }
         }
+
+        
+    }
+    
+    func clockIn(){
+        clockedIn = true
+        
+        UserDefaults.standard.set(Date(), forKey: "clockedIn")
+        UserDefaults.standard.synchronize()
+        
+        startUpTimer()
+        
     }
     
     func clockOut(){
         clockedIn = false
+        
+        timer?.invalidate()
+        timer = nil
         
         if let clockedInDate = UserDefaults.standard.value(forKey: "clockedIn") as? Date {
             //            print(clockedInDate)
