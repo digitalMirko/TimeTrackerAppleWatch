@@ -54,7 +54,18 @@
         <!--TimeDetail-->
         <scene sceneID="dha-Ww-V4d">
             <objects>
-                <controller identifier="TimeDetail" id="B9s-Q8-lqi"/>
+                <controller identifier="TimeDetail" id="B9s-Q8-lqi" customClass="DetailInterfaceController" customModule="Time_Tracker_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Clock-In" id="KBE-7r-7vs"/>
+                        <label alignment="left" text="Nov 5th 12:10am" id="QRM-AR-Pk6"/>
+                        <label alignment="left" text="Clock-Out" id="pbf-dw-yWB"/>
+                        <label alignment="left" text="Nov 5th 12:20am" id="7s1-Ns-EhM"/>
+                    </items>
+                    <connections>
+                        <outlet property="clockInLabel" destination="QRM-AR-Pk6" id="BCQ-Nb-GGI"/>
+                        <outlet property="clockOutLabel" destination="7s1-Ns-EhM" id="Okm-1i-wBK"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="364" y="-225"/>
         </scene>
